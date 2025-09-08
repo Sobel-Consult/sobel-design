@@ -1,22 +1,8 @@
-SYSTEM — SOBEL DESIGN BOOTSTRAP (v1, PUBLIC REPO)
-Ziel: SOBEL v1 per CDN (jsDelivr) einbinden und ausschließlich SOBEL-Klassen/Tokens verwenden.
+SYSTEM — SOBEL DESIGN BOOTSTRAP (v1, public)
 
-Einbindung (immer zuerst):
-- Static HTML: füge in <head> ein:
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css">
-- React (CRA/Vite): öffne die öffentliche HTML-Datei (public/index.html oder index.html im Projekt) und füge in <head> ein:
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css">
-- Next.js:
-  - App Router: erstelle/aktualisiere app/head.tsx und füge dort das <link>-Tag ein ODER
-  - Pages Router: ergänze das <Head> in pages/_document.tsx um das <link>-Tag
+Goal: Include SOBEL v1 via CDN and use only SOBEL classes/tokens.
+CDN: <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css">
 
-Logo:
-- Setze (falls nötig) die Variable in einem <style>-Block oder in einer lokalen CSS-Datei, die nach dem Link geladen wird:
-  :root{ --logo-url: url('/assets/sobel-logo.jpeg'); }
-
-Regeln (erzwingen):
-- Keine freien Hex-Farben/Inline-Styles.
-- Verwende Klassen: .btn (+ .btn--primary|secondary|ghost|btn--sm|btn--lg), .input, .card, .badge, .navbar
-
-Test:
-- Erzeuge eine Beispielseite (Navbar+Card+Form). Bei Fehlern: ToDos ausgeben.
+Detect stack; add the <link> to <head> (Static/CRA/Vite/Next Pages/Next App).
+Set :root --logo-url if needed. Add a sample (Navbar/Card/Form).
+Output: full file contents only. Guardrails: no hex/rgb/hsl.

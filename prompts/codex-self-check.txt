@@ -1,0 +1,3 @@
+TASK — SELF-CHECK (SOBEL v1)
+Validate no hex/rgb/hsl or inline color styles; ensure exact link to https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css; correct Next placement; sample exists using SOBEL classes.
+If violations exist, fix and reprint final patch only.

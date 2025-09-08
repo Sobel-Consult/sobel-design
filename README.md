@@ -1,44 +1,37 @@
 # SOBEL Design v1
 
-Fertige, versionierte Styles (CSS-Variablen + Basis-Komponenten) für schnelle, markenkonforme UIs.
+Versioned stylesheet (**CSS tokens + base components**) for fast, brand-consistent UIs.
 
-## Inhalte
-- `dist/sobel.css` – Tokens + Komponenten (Buttons, Inputs, Badge, Card, Navbar)
-- `assets/sobel-logo.jpeg` – Logo
-- `tokens/brand.tokens.json` – Token-Quelle (JSON)
-- `examples/index.html` – Mini-Testseite
+## Contents
+- `dist/sobel.css` — tokens & base classes (.btn, .input, .card, .badge, .navbar)
+- `assets/sobel-logo.jpeg` — default logo (referenced via CSS variable)
+- `tokens/brand.tokens.json` — token source in JSON
+- `examples/index.html` — quick smoke test
+- `docs/StyleGuide.md` — how the style logic works (for externals)
+- `docs/PromptCollection.md` — copy-paste prompts for Codex / guidance docs
+- `ci-templates/sobel-style-guard.yml` — tiny CI for consumer apps
+- `.github/workflows/cdn-health.yml` — health checks (design repo)
 
-## Nutzung (CDN über jsDelivr)
-1. Repo veröffentlichen unter eurer GitHub-Organisation (z. B. `sobelconsult/sobel-design`).
-2. Tag/Release anlegen: `v1.0.0`.
-3. In beliebigen Projekten einbinden:
+## Usage (CDN via jsDelivr)
+Add this to your HTML `<head>`:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css">
 ```
-> Logo-Pfad in der Consumer-App setzen (oder Logo dorthin kopieren):
+Set the logo (optional):
 ```html
 <style>:root{ --logo-url: url('/assets/sobel-logo.jpeg'); }</style>
 ```
 
-## Nutzung (lokal im Projekt)
-Lege `sobel.css` in `/public/styles/` und binde ein:
-```html
-<link rel="stylesheet" href="/styles/sobel.css">
-```
+### React / Vite / CRA
+Edit `public/index.html` (or `index.html`) and place the `<link>` inside `<head>`.
 
-### React/Next/Vite
-- Next.js: Import in `src/pages/_app.tsx` oder `src/app/layout.tsx`:
-```ts
-import '@/styles/sobel.css'
-```
-- Vite/CRA: Import in `src/main.tsx`:
-```ts
-import '/public/styles/sobel.css'
-```
+### Next.js
+- **Pages Router**: add the `<link>` inside `<Head>` in `pages/_document.tsx`.
+- **App Router**: return the `<link>` from `app/head.tsx`.
 
-## Versionierung
-- Jede größere Änderung → neues Tag `vX.Y.Z`.
-- Alte Projekte bleiben stabil, wenn sie auf ein Tag zeigen (`@v1.0.0`).
+## Versioning
+- Tag releases (e.g., `v1.0.0`) and reference the tag in the CDN URL.
+- Upgrade by changing only the tag in your apps; everything else remains stable.
 
-## Lizenz
+## License
 MIT

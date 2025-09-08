@@ -1,0 +1,44 @@
+name: SOBEL Style Guard
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+
+env:
+  SOBEL_CDN: https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SOBEL CDN link present
+        run: |
+          set -e
+          if ! grep -R -n --include='*.html' --include='*.tsx' --include='*.jsx' --include='*.ts' --include='*.js' "$SOBEL_CDN" . ; then
+            echo "::error::Missing SOBEL CDN link ($SOBEL_CDN)."
+            exit 1
+          fi
+          echo "Found SOBEL CDN link."
+
+      - name: Block raw color values
+        run: |
+          set -e
+          FILES=$(git ls-files | grep -E '\.(css|scss|sass|less|js|jsx|ts|tsx|html)$' | grep -vE '^(dist|node_modules|.next|build|out|coverage|examples|tokens|prompts)/')
+          if [ -n "$FILES" ]; then
+            if grep -nE '#[0-9a-fA-F]{3,6}\b|rgba?\s*\(|hsla?\s*\(' $FILES; then
+              echo "::error::Found raw color values. Use SOBEL classes/tokens."
+              exit 1
+            fi
+          fi
+          echo "No off-brand colors found."
+
+      - name: Sanity: SOBEL classes used
+        run: |
+          set -e
+          if ! grep -R -n --include='*.html' --include='*.tsx' --include='*.jsx' -E 'class(Name)?="[^"]*(btn|navbar|card|badge|input)' . ; then
+            echo "::warning::No SOBEL UI classes detected (btn/navbar/card/badge/input)."
+          fi

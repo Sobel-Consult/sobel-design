@@ -1,2 +1,2 @@
 ## v1.0.0
-- Initial release: tokens, base components, logo hook.
+- Initial public release: tokens, base classes, docs, prompts, CI templates.
