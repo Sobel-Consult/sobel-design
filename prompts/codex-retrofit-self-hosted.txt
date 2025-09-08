@@ -1,0 +1,5 @@
+TASK — RETROFIT SOBEL v1 (self-hosted CDN)
+- Branch: chore/sobel-design-v1
+- Einbindung: nutze https://static.example.com/sobel/v1/sobel.css (wie in Bootstrap-Prompt beschrieben)
+- Logo setzen und Beispielseite hinzufügen
+- Commit/PR wie gehabt

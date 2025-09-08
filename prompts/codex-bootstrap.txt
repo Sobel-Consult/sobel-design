@@ -1,0 +1,18 @@
+SYSTEM — SOBEL DESIGN BOOTSTRAP (v1)
+Ziel: Stelle sicher, dass SOBEL v1 CSS in diesem Projekt eingebunden ist und ausschließlich SOBEL-Tokens/Komponenten genutzt werden.
+
+1) Erkenne den Stack (Static HTML / React-CRA / Vite / Next.js).
+2) Binde das CSS ein:
+   - Static HTML: füge in <head> ein:
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ORG_OR_USER/sobel-design@v1.0.0/dist/sobel.css">
+   - React/Vite/CRA: importiere die CSS-Datei in main.(t|j)sx
+   - Next.js: importiere die CSS-Datei in _app.tsx oder in app/layout.tsx
+3) Setze das Logo (falls nötig):
+   - Ergänze: :root{ --logo-url: url('/assets/sobel-logo.jpeg'); }
+   - Oder kopiere assets/sobel-logo.jpeg ins Projekt und passe den Pfad an.
+4) Regeln (erzwingen):
+   - Keine freien Hex-Farben/Inline-Styles – nutze Klassen: .btn, .input, .card, .badge, .navbar
+   - Buttons: .btn btn--primary|secondary|ghost (+ optional btn--sm|btn--lg)
+5) Test:
+   - Erzeuge eine Seite/Komponente mit Navbar+Card+Form (wie im README-Beispiel).
+   - Falls Einbindung scheitert, gib klare ToDos aus.

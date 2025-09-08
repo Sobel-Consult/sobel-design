@@ -1,0 +1,231 @@
+
+/*!
+ * SOBEL v1 – tokens + base components
+ * Source colors: Brand Blues (Brandbook p.19) and Important palette (Brandbook p.20).
+ * Replace the --logo-url path to point at your logo file in each app if needed.
+ */
+
+/* =========================
+   TOKENS
+   ========================= */
+:root {
+  /* Brand Blues */
+  --brand-blue-main: #0F0FEA;
+  --brand-blue-sea:  #0B31A4;
+  --brand-blue-dark: #071E63;
+  --brand-blue-violet: #88A6FF;
+  --brand-blue-light:  #AEC5FC;
+  --brand-blue-off:    #C3D2FF;
+
+  /* Important palette */
+  --imp-green-on:   #259D4D;
+  --imp-green-sea:  #10A4A4;
+  --imp-green-light:#2BD9D0;
+  --imp-red-warning:#D01010;
+  --imp-red-off:    #991414;
+  --imp-orange-sales:#DA8608;
+  --imp-orange-dark: #A4660B;
+  --imp-yellow-note: #E1C006;
+  --imp-yellow-green:#ADA31B;
+  --imp-purple-mark: #580FEA;
+
+  /* Semantic aliases */
+  --color-primary: var(--brand-blue-main);
+  --color-primary-hover: var(--brand-blue-sea);
+  --color-primary-contrast: #FFFFFF;
+
+  --color-bg: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-border: rgba(0,0,0,.12);
+  --color-text: #0B0F14;
+  --color-muted: #61666C;
+
+  --color-success: var(--imp-green-on);
+  --color-warning: var(--imp-orange-sales);
+  --color-danger:  var(--imp-red-warning);
+  --color-info:    var(--brand-blue-light);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 22px;
+  --fs-2xl: 28px;
+
+  /* Spacing (4/8 grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radius & shadow */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 14px rgba(0,0,0,.08);
+
+  /* Logo */
+  --logo-url: url('/assets/sobel-logo.jpeg');
+  --logo-width: 40px;
+  --logo-height: 40px;
+}
+
+/* =========================
+   BASE
+   ========================= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 { margin: 0 0 var(--space-4); line-height: 1.2; }
+h1 { font-size: var(--fs-2xl); }
+h2 { font-size: var(--fs-xl); }
+h3 { font-size: var(--fs-lg); }
+p  { margin: 0 0 var(--space-4); color: var(--color-text); }
+small { font-size: var(--fs-sm); color: var(--color-muted); }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: var(--color-primary-hover); text-decoration: underline; }
+
+/* Utilities */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); }
+.brand-logo {
+  display: inline-block;
+  width: var(--logo-width);
+  height: var(--logo-height);
+  background-image: var(--logo-url);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   COMPONENTS
+   ========================= */
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  padding: 0.625rem 1rem; /* ~10px 16px */
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  box-shadow: var(--shadow-sm);
+}
+.btn--primary:hover { background: var(--color-primary-hover); }
+
+.btn--secondary {
+  background: #fff;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn--secondary:hover {
+  background: rgba(15,15,234,.06);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-primary);
+}
+.btn--sm { padding: 0.5rem 0.75rem; font-size: var(--fs-sm); }
+.btn--lg { padding: 0.75rem 1.25rem; font-size: var(--fs-lg); }
+
+/* Input */
+.input {
+  display: inline-flex;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.625rem 0.75rem;
+  font-size: var(--fs-md);
+  background: #fff;
+  color: var(--color-text);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.input::placeholder { color: var(--color-muted); }
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(15,15,234,.15);
+}
+
+/* Card */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+}
+.card--tight { padding: var(--space-4); }
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  border: 1px solid transparent;
+}
+.badge--info {
+  background: var(--brand-blue-light);
+  color: #102a43;
+}
+.badge--success {
+  background: var(--imp-green-light);
+  color: #0e3e2c;
+}
+.badge--warning {
+  background: var(--imp-yellow-note);
+  color: #3d2f00;
+}
+.badge--danger {
+  background: var(--imp-red-warning);
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.navbar .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+}
+.navbar .actions { display: flex; gap: var(--space-2); }
+
+/* Forms - helper */
+.form-row { display: grid; gap: var(--space-3); }

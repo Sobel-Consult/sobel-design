@@ -1,0 +1,21 @@
+{
+  "name": "sobel-design",
+  "version": "1.0.0",
+  "description": "SOBEL CSS tokens and base components",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist",
+    "assets",
+    "tokens",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "sobel",
+    "design-system",
+    "css",
+    "tokens"
+  ]
+}

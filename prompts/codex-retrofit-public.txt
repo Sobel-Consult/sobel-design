@@ -1,0 +1,16 @@
+TASK — RETROFIT SOBEL v1 IN BESTEHENDES REPO (PUBLIC REPO)
+1) Branch: chore/sobel-design-v1
+2) Einbindung per <link>:
+   - HTML: <head> → <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css">
+   - React (CRA/Vite): public/index.html bzw. index.html → <head> Link einfügen
+   - Next.js:
+     - App Router: app/head.tsx → Link einfügen
+     - Pages Router: pages/_document.tsx → <Head> um Link ergänzen
+3) Logo:
+   - :root{ --logo-url: url('/assets/sobel-logo.jpeg'); } setzen oder Datei in /assets/ ablegen
+4) Beispielseite/Story hinzufügen (Navbar, Card, Buttons, Inputs)
+5) README-Abschnitt „SOBEL Styles“ ergänzen
+6) Commit & PR:
+   - Commit: "chore: integrate SOBEL design v1 (CDN)"
+   - PR-Titel: "Integrate SOBEL design v1"
+   - PR-Body: Zweck, Einbindungsstelle, Testhinweise

@@ -1,0 +1,12 @@
+PR TITLE: Integrate SOBEL design v1
+PR BODY:
+- Adds SOBEL v1 stylesheet via CDN (jsDelivr)
+- Injects usage sample (Navbar, Card, Buttons)
+- Sets logo via CSS variable (:root --logo-url)
+
+**How to test**
+- Start the app, open the sample page, verify primary button color/typography match SOBEL brand.
+- Confirm the CSS is loaded from: https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design@v1.0.0/dist/sobel.css
+
+**Rollout**
+- Merge & ship. For future design changes update the tag to v1.x or v2.x.

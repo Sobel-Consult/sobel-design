@@ -1,0 +1,64 @@
+{
+  "brand": {
+    "blue": {
+      "main": "#0F0FEA",
+      "sea": "#0B31A4",
+      "dark": "#071E63",
+      "violet": "#88A6FF",
+      "light": "#AEC5FC",
+      "off": "#C3D2FF"
+    }
+  },
+  "important": {
+    "green_on": "#259D4D",
+    "green_sea": "#10A4A4",
+    "green_light": "#2BD9D0",
+    "red_warning": "#D01010",
+    "red_off": "#991414",
+    "orange_sales": "#DA8608",
+    "orange_dark": "#A4660B",
+    "yellow_note": "#E1C006",
+    "yellow_green": "#ADA31B",
+    "purple_mark": "#580FEA"
+  },
+  "semantic": {
+    "primary": "#0F0FEA",
+    "primary_hover": "#0B31A4",
+    "primary_contrast": "#FFFFFF",
+    "text": "#0B0F14",
+    "muted": "#61666C"
+  },
+  "typography": {
+    "font_sans": "system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "sizes": {
+      "xs": "12px",
+      "sm": "14px",
+      "md": "16px",
+      "lg": "18px",
+      "xl": "22px",
+      "2xl": "28px"
+    }
+  },
+  "spacing": {
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "6": "24px",
+    "8": "32px"
+  },
+  "radius": {
+    "sm": "6px",
+    "md": "10px",
+    "lg": "14px"
+  },
+  "shadow": {
+    "sm": "0 1px 2px rgba(0,0,0,.06)",
+    "md": "0 4px 14px rgba(0,0,0,.08)"
+  },
+  "logo": {
+    "default_path": "/assets/sobel-logo.jpeg",
+    "width": "40px",
+    "height": "40px"
+  }
+}

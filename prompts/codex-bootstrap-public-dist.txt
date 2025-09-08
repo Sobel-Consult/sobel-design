@@ -1,0 +1,20 @@
+SYSTEM — SOBEL DESIGN BOOTSTRAP (v1, public dist)
+Ziel: SOBEL v1 per CDN einbinden und nur SOBEL-Tokens/Komponenten nutzen.
+
+Einbindung (immer zuerst ausführen):
+- Static HTML: füge in <head> ein:
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design-dist@v1.0.0/dist/sobel.css">
+- React/Vite/CRA: importiere die CSS-Datei in src/main.(t|j)sx (oder index.html <head>):
+  import "https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design-dist@v1.0.0/dist/sobel.css";
+- Next.js: importiere die CSS-Datei in src/pages/_app.tsx oder app/layout.tsx:
+  import "https://cdn.jsdelivr.net/gh/sobelconsult/sobel-design-dist@v1.0.0/dist/sobel.css";
+
+Logo setzen (falls nötig):
+- :root{ --logo-url: url('/assets/sobel-logo.jpeg'); } ergänzen ODER Datei ins Projekt kopieren.
+
+Regeln (erzwingen):
+- Keine freien Hex-Farben/Inline-Styles.
+- Klassen: .btn (+ .btn--primary|secondary|ghost|btn--sm|btn--lg), .input, .card, .badge, .navbar
+
+Test:
+- Erzeuge eine Beispielseite (Navbar+Card+Form). Bei Fehlern klare ToDos ausgeben.

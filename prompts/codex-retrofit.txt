@@ -1,0 +1,17 @@
+TASK — RETROFIT SOBEL v1 IN BESTEHENDES REPO
+Ziel: SOBEL v1 in ein bestehendes Repo integrieren und als PR vorschlagen.
+
+Vorgehen:
+1) Stack erkennen (Static / Vite / CRA / Next).
+2) Branch erstellen: chore/sobel-design-v1
+3) Einbindung:
+   - HTML: <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ORG_OR_USER/sobel-design@v1.0.0/dist/sobel.css">
+   - React/Vite/CRA: Import in src/main.(t|j)sx
+   - Next: Import in src/pages/_app.tsx oder app/layout.tsx
+   - Optional: :root{{ --logo-url: url('/assets/sobel-logo.jpeg'); }}
+4) Beispielseite/Story hinzufügen (Navbar + Card + Buttons + Inputs).
+5) README-Abschnitt „SOBEL Styles“ ergänzen mit der Einbindungszeile.
+6) Commit & PR öffnen:
+   - Commit-Message: "chore: integrate SOBEL design v1 (CDN)"
+   - PR-Titel: "Integrate SOBEL design v1"
+   - PR-Body: Zweck, Einbindungsstelle, Testhinweise.
